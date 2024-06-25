@@ -1,0 +1,26 @@
+function multiply(x, y){
+  let result = 0;
+  for( let i=0; i<y; i++){
+    result += x;
+  }
+  return result;
+}
+
+function power(a, b){
+  if(b==0) return 1;
+  if(b==1) return a;
+  if(a==0) return 0;
+  
+  let halfPower = power(a, Math.floor(b/2));
+  
+  let result = multiply(halfPower, halfPower);
+  
+  if(b%2!==0){
+    result = multiply(result, a);
+  }
+  return result;
+}
+
+let a = 4;
+let b = 6;
+console.log(power(a, b));
