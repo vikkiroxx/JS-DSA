@@ -1,0 +1,19 @@
+function minTrips(weights){
+  weights.sort((a,b)=>a-b);
+  
+  let trips = 0;
+  let left = 0;
+  let right = weights.length-1;
+  
+  while(left<=right){
+    if(weights[left] + weights[right] <= 25){
+      left++;
+    }
+    right--;
+    trips++;
+  }
+  return trips;
+}
+
+let peopleWeights = [14, 20, 3, 5, 11, 1, 7];
+console.log(minTrips(peopleWeights));
