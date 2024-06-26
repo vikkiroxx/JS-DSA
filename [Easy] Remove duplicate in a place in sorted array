@@ -1,0 +1,19 @@
+let arr = [1,2,2,3,4,7,7,9]
+
+function removeDuplicateinPlace(arr){
+  if(arr.length === 0) return 0;
+  let uniqueIndex = 0;
+  
+  for(let i=1; i<arr.length; i++){
+    if(arr[i] !== arr[uniqueIndex]){
+      uniqueIndex++;
+      arr[uniqueIndex] = arr[i];
+    }
+  }
+  return uniqueIndex+1;
+}
+
+let newLength = removeDuplicateinPlace(arr);
+
+console.log("Modified Array: " + arr.slice(0, newLength));
+console.log("New Length: " + newLength);
