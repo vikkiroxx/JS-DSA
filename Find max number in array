@@ -1,0 +1,9 @@
+let arr = [23, 57, 11, 19, 78, 30];
+
+function findMax(arr){
+  arr.sort((a,b)=>a-b);
+  let maxNum = arr[arr.length-1];
+  return maxNum;
+}
+
+console.log(findMax(arr));
