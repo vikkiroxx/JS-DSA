@@ -1,0 +1,16 @@
+let arr = [23, 57, 11, 19, 78, 30];
+
+function reverseArrayInPlace(arr){
+  let left = 0;
+  let right = arr.length-1;
+  
+  while(left<right){
+    [arr[left], arr[right]] = [arr[right], arr[left]];
+    left++;
+    right--;
+  }
+}
+
+console.log("Origial Array: ", arr);
+reverseArrayInPlace(arr);
+console.log("Reversed Array: ", arr);
