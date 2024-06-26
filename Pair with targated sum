@@ -1,0 +1,19 @@
+let arr = [1, 4, 3, 19, 15, 5, 6, 8];
+let target = 20;
+
+function targatedSum(arr, target){
+  let pairs = [];
+  let map = {};
+  
+  for(let i=0; i<arr.length; i++){
+    let complement = target - arr[i];
+    
+    if(map[complement] !== undefined){
+      pairs.push([complement, arr[i]]);
+    }
+    map[arr[i]]=i;
+  }
+  return pairs;
+}
+
+console.log(targatedSum(arr, target));
