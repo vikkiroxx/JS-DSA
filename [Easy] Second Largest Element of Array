@@ -1,0 +1,16 @@
+let arr = [23, 12, 24, 11, 7, 9, 90, 28];
+
+function findSecondLargest(arr){
+  if(arr.length<2) throw new Error("Array must contain atleast 2 elements");
+  
+  arr.sort((a,b)=>b-a);
+  let firstLargest = arr[0];
+  for(let i=1; i<arr.length; i++){
+    if(arr[i] !== firstLargest){
+      return arr[i];
+    }
+  }
+  throw new Error("No Second Largest Found")
+}
+
+console.log(findSecondLargest(arr));
