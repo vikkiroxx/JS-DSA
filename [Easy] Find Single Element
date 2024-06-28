@@ -1,0 +1,12 @@
+let arr = [1,2,4,3,5,1,3,2,5]
+
+function findSingleElement(arr){
+  arr.sort((a,b)=>a-b);
+  
+  for(let i=0; i<arr.length; i+=2){
+    if(i === arr.length-1 || arr[i] !== arr[i+1]) return arr[i];
+  }
+  return -1;
+}
+
+console.log(findSingleElement(arr));
