@@ -1,0 +1,8 @@
+function isOddorEven(n){
+  const result = ["Even", "Odd"];
+  
+  console.log(result[n & 1]);
+}
+
+isOddorEven(4);
+isOddorEven(7);
