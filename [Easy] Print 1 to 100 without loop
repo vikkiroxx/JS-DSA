@@ -1,0 +1,9 @@
+function printWithoutLoop(n){
+  if(n>100) return;
+  
+  console.log(n);
+  
+  printWithoutLoop(n+1);
+}
+
+printWithoutLoop(1);
