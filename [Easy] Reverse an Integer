@@ -1,0 +1,13 @@
+function reverseNumber(n){
+  let stringNumber = n.toString();
+  let reversedString = stringNumber.split('').reverse().join('');
+  let reversedNumber = parseInt(reversedString, 10);
+  return reversedNumber;
+}
+
+console.log(reverseNumber(127));
+console.log(reverseNumber(320)); // Output: 23
+console.log(reverseNumber(231)); // Output: 132
+console.log(reverseNumber(12345)); // Output: 54321
+console.log(reverseNumber(100)); // Output: 1
+console.log(reverseNumber(0)); // Output: 0
