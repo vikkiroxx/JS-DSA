@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var subarraySum = function(nums, k) {
+    let count = 0;
+    let currSum = 0;
+    let prefixSums = new Map();
+    prefixSums.set(0, 1);
+
+    for(let num of nums){
+        currSum += num;
+
+        if(prefixSums.has(currSum-k)){
+            count += prefixSums.get(currSum-k);
+        }
+
+        prefixSums.set(currSum, (prefixSums.get(currSum) || 0) + 1);
+    }
+    return count;
+};
