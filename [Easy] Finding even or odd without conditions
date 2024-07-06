@@ -1,3 +1,4 @@
+// 1st Method
 function isOddorEven(n){
   const result = ["Even", "Odd"];
   
@@ -6,3 +7,14 @@ function isOddorEven(n){
 
 isOddorEven(4);
 isOddorEven(7);
+
+// 2nd Method
+function isEvenOrOdd(n){
+  return (n & 1) === 0 ? 'Even' : 'Odd';
+}
+
+console.log(isEvenOrOdd(4)); // Output: Even
+console.log(isEvenOrOdd(7)); // Output: Odd
+console.log(isEvenOrOdd(0)); // Output: Even
+console.log(isEvenOrOdd(-2)); // Output: Even
+console.log(isEvenOrOdd(-3)); // Output: Odd
