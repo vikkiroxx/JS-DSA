@@ -1,0 +1,17 @@
+function distinctSubstrings(str){
+  const n = str.length;
+  const substrings = new Set();
+  
+  for(let i=0; i<n; i++){
+    for(let j=i+1; j<=n; j++){
+      substrings.add(str.substring(i, j));
+    }
+  }
+  return substrings.size;
+}
+
+const S1 = "abc";
+console.log(distinctSubstrings(S1));  // Output: 6
+
+const S2 = "aaa";
+console.log(distinctSubstrings(S2));  // Output: 3
