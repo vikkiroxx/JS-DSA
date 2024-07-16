@@ -1,0 +1,15 @@
+function prettyPattern(n){
+  let pattern = Array.from({length:n}, ()=> Array(n).fill(' '));
+  
+  for(let i=0; i<n; i++){
+    for(let j=0; j<n; j++){
+      if(i === 0 || i === n-1 || j === 0 || j === n-1 || i === j || i+j === n-1){
+        pattern[i][j] = '*';
+      }
+    }
+  }
+  return pattern.map(row=>row.join('')).join('\n');
+}
+
+let n = 4;
+console.log(prettyPattern(n));
