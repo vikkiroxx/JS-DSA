@@ -1,0 +1,39 @@
+function largestConnectedComponent(grid){
+  let maxSize = 0;
+  let rows = grid.length;
+  let cols = grid[0].length;
+  const directions = [
+    [-1,0], [1,0], [0,-1], [0,1],
+    [-1,-1], [-1,1], [1,-1], [1,1]
+    ];
+    
+    function dfs(row, col){
+      if(row<0 || col<0 || row>=rows || col>=cols || grid[row][col] === 0){
+        return 0;
+      }
+      
+      grid[row][col] = 0;
+      let size =1;
+      for(const[dx, dy] of directions){
+        size += dfs(row+dx, col+dy);
+      }
+      return size;
+    }
+    
+    for(let i=0; i<rows; i++){
+      for(let j=0; j<cols; j++){
+        if(grid[i][j] === 1){
+          maxSize = Math.max(maxSize, dfs(i, j));
+        }
+      }
+    }
+    return maxSize;
+}
+
+const grid = [
+    [1, 0, 0, 1],
+    [1, 0, 0, 1],
+    [1, 1, 0, 1],
+    [0, 0, 1, 0]
+];
+console.log(largestConnectedComponent(grid)); // Output: 6
