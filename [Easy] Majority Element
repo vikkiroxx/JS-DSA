@@ -1,0 +1,15 @@
+function majorityElement(nums){
+  let element = null;
+  let count =0;
+  
+  for(let num of nums){
+    if(count === 0){
+      element = num;
+    }
+    count += (num === element) ? 1 : -1;
+  }
+  return element;
+}
+
+const nums = [3, 2, 3];
+console.log(majorityElement(nums)); // Output: 3
