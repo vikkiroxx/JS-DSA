@@ -1,0 +1,12 @@
+function reverseWords(string){
+  const words = string.split(' ');
+  
+  const reverseWords = words.reverse();
+  
+  const reversedStrig = reverseWords.join(' ');
+  
+  return reversedStrig  
+}
+
+const s = "the sky is blue";
+console.log(reverseWords(s)); // Output: "blue is sky the"
