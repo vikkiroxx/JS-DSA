@@ -1,0 +1,13 @@
+function sumOfDigits(n){
+  let Sum = 0;
+  
+  while(n>0){
+    let lastDigit = n%10;
+    Sum += lastDigit;
+    n = Math.floor(n/10);
+  }
+  return Sum;
+}
+
+let num = 592;
+console.log(sumOfDigits(num));
