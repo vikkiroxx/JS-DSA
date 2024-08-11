@@ -1,0 +1,22 @@
+function canSortByReversingSubArrays(arr, k){
+  const sortedArr = [...arr].sort((a,b) => a-b);
+  
+  if(k===1) return arr.every((val, idx) => val === sortedArr[idx]);
+  
+  if(k === arr.length) return true;
+  
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] !== sortedArr[i]){
+      let j = arr.indexOf(sortedArr[i]);
+      if(i%k !== j%k) return false;
+    }
+  }
+  return true;
+}
+
+const prompt = require('prompt-sync')();
+const arr = prompt("Enter the array elements seperated by space: ").split(' ').map(Number);
+const k = parseInt(prompt("Enter the value of K: "));
+
+const result = canSortByReversingSubArrays(arr, k);
+console.log(result ? "Possible to sort Array" : "Not Possible to sort Array");
