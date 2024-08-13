@@ -1,0 +1,36 @@
+function minWaterPlacements(t, testCases) {
+    let results = [];
+    
+    for (let i = 0; i < t; i++) {
+        const n = testCases[i].n;
+        const s = testCases[i].s;
+        
+        if(!s.includes('.')){
+          results.push(0);
+          continue;
+        }
+        
+        if(s.includes('...')){
+          results.push(2);
+          continue;
+        }
+        
+        const openCount = s.split('').filter(char => char === '.').length;
+        results.push(openCount);
+    }
+    
+    return results;
+}
+
+// Example usage:
+const t = 5;
+const testCases = [
+    { n: 3, s: "..." },
+    { n: 7, s: "##....#" },
+    { n: 7, s: "..#.#.." },
+    { n: 4, s: "####" },
+    { n: 10, s: "#...#..#.#" }
+];
+
+const results = minWaterPlacements(t, testCases);
+console.log(results);  // Output: [2, 2, 5, 0, 2]
